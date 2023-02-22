@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="view-details" id="ViewDetails">
+    <div class="view-details-header">
+        <div class="icon-edit"><img src="edit1.jpg">Edit</div>
+        <div class="icon-delete"><img src="delete2.png" onclick="deleteContact()">Delete</div>
+    </div>
+    <div class="view-details-body" id="ViewDetailsBody">
+        <p id="PersonName" class="Person-Name"></p>
+        <div id='DetailEmail' class="detail-email"></div>
+        <div id="DetailMobile" class="detail-mobile"></div>
+        <div id="DetailLandline" class="detail-landline"></div>
+        <div id="DetailSite" class="detail-site"></div>
+
+        <div id="DetailAddress" class="detail-address"><span id="DetailAddressValue" class="detail-address-value"></span></div>
+
+    </div>
+</div>
+

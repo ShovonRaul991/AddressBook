@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form class="form-input" id="Formid">
+    
+        <div>
+            <label for="NameEntry">Name <span id="RequiredName">*</span></label>
+            <input id="NameEntry" type="text" onkeydown="nameValidate()" onkeyup="nameValidate()">
+        </div>
+        <div>
+            <label for="EmailEntry">Email <span id="RequiredEmail">*</span></label>
+            <input id="EmailEntry" type="text" onkeydown="validateEmail()" onkeyup="validateEmail()">
+        </div>
+        <div class="mobile-landline">
+            <div class="mobile-landline-label">
+                <div>
+                    <label for="MobileEntry" class="label">
+                        Mobile
+                        <span id="RequiredMobile">*</span>
+                    </label>
+                    <input id="MobileEntry" class="input" type="text" onkeyup="validateMobile()" onkeydown="validateMobile()">
+
+                </div>
+                <div>
+                    <label for="LandlineEntry" class="label">Landline<span id="RequiredLandline">*</span></label>
+
+                    <input id="LandlineEntry" class="input" type="text" onkeyup="validateLandline()" onkeydown="validateLandline()">
+
+                </div>
+
+            </div>
+            <!-- <div class="mobile-landline-input">
+                                        <!-- <label for="LandlineEntry">Landline<span id="RequiredLandline">*</span></label> -->
+            <!-- <input id="MobileEntry" type="text" onkeyup="validateMobile()" onkeydown="validateMobile()"> -->
+            <!-- <label for="LandlineEntry" class="label">Landline<span id="RequiredLandline">*</span></label> -->
+            <!-- <input id="MobileEntry" type="text" onkeyup="validateMobile()" onkeydown="validateMobile()"> -->
+            <!-- <input id="LandlineEntry" class="input" type="text" name="" id="" onkeyup="validateLandline()" onkeydown="validateLandline()">
+            </div> -->
+        </div>
+        <div>
+            <label for="WebsiteEntry">Website</label>
+            <input id="WebsiteEntry" type="text">
+        </div>
+        <div>
+            <label for="AddressEntry">Address</label>
+            <textarea name="" id="AddressEntry"></textarea>
+        </div>
+
+
+        <div class="submit-button">
+            <input type="button" name="Add" id="SubmitButton" value="Add">
+            <input type="button" name="Edit" id="EditButton" value="Edit">
+        </div>
+    </form>

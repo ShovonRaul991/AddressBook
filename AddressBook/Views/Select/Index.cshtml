@@ -1,16 +1,16 @@
 ﻿@model Address
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    
+
+
 <div class="view-details" id="ViewDetails" style="width: 160%">
     <div class="view-details-header">
-        <p style="display: none">@Model.Id</p>
-        <a class="icon-edit" asp-controller="Edit" asp-action="Index"asp-route-id=@Model.Id><img src="~/images/edit1.jpg" />Edit</a>
-        <a class="icon-delete"><img src="~/images/delete2.png" />Delete</a>
+        <a class="icon-edit" asp-controller="Edit" asp-action="Index" asp-route-id=@Model.Id><img src="~/images/edit1.jpg" />Edit</a>
+        <a class="icon-delete"><img src="~/images/delete2.png"/>Delete</a>
     </div>
-    
+
     <div class="view-details-body" id="ViewDetailsBody">
         
         <p id="PersonName" class="Person-Name"><Span>Name: </Span>@Model.Name</p>
@@ -23,4 +23,6 @@
 
     </div>
 </div>
+
+
 

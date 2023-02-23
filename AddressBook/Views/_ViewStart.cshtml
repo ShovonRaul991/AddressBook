@@ -1,3 +1,7 @@
-﻿@{
+﻿@using AddressBook.Data
+@inject AddressBookDbContext _context;
+@{
+    ViewBag.Context = _context;
     Layout = "_Layout";
 }
+

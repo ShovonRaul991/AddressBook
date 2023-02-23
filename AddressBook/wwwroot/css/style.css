@@ -43,6 +43,8 @@ body{
     list-style: none;
     margin: 0;
     padding: 0;
+    
+    
 }
 
 
@@ -62,8 +64,8 @@ body{
 }
 
 .page-form{
-    height: 81vh;
-    width: 100vw;
+    height: 70vh;
+    width: 80vw;
     display: flex;
 }
 
@@ -111,10 +113,9 @@ body{
 /* right part */
 .view-details{
     position: sticky;
-    width: 40%;
+    width: 160%;
     margin: 20px;
     padding: 50px;
-    display: none;
 }
 .view-details-header{
     float: right;
@@ -131,7 +132,7 @@ body{
 }
 .icon-delete{
     position: relative;
-    bottom: 24px;
+    bottom: 10px;
 }
 .icon-delete img{
     width: 20px;
@@ -171,7 +172,8 @@ body{
     position: relative;
     top: 40px;
     padding: 40px;
-    width: 140%;
+    width: 160%;
+    height: 80%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
@@ -237,9 +239,7 @@ body{
     font-size: 10px;
     margin-left: 5px;
 }
-#EditButton{
-    display: none;
-}
+
  #RequiredName,#RequiredEmail,#RequiredMobile,#RequiredLandline{
     color: red;
     margin-right: 20px;

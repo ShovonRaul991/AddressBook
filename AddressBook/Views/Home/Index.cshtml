@@ -3,24 +3,26 @@
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    
-<div class="view-details" id="ViewDetails" style="width: 160%">
-    <div class="view-details-header">
-        <p style="display: none">@Model.Id</p>
-        <a class="icon-edit" asp-controller="Edit" asp-action="Index"asp-route-id=@Model.Id><img src="~/images/edit1.jpg" />Edit</a>
-        <a class="icon-delete"><img src="~/images/delete2.png" />Delete</a>
-    </div>
-    
-    <div class="view-details-body" id="ViewDetailsBody">
-        
-        <p id="PersonName" class="Person-Name"><Span>Name: </Span>@Model.Name</p>
-        <div id='DetailEmail' class="detail-email"><Span>Email: </Span>@Model.Email</div>
-        <div id="DetailMobile" class="detail-mobile"><Span>Mobile: </Span>@Model.MobileNumber</div>
-        <div id="DetailLandline" class="detail-landline"><Span>Landline: </Span>@Model.LandLineNumber</div>
-        <div id="DetailSite" class="detail-site"><Span>Website: </Span>@Model.Website</div>
+@if (Model != null)
+{
+    <div class="view-details" id="ViewDetails" style="width: 140%">
+        <div class="view-details-header">
+            <a class="icon-edit" asp-controller="Edit" asp-action="Index" asp-route-id=@Model.Id style="color:black;text-decoration:none;position:relative;right:20px"><img src="~/images/edit1.jpg" />Edit</a>
+            <a class="icon-delete" asp-controller="Delete" asp-action="Index" asp-route-id=@Model.Id style="color:black;text-decoration:none;position:relative;top:1px"><img src="~/images/delete2.png" />Delete</a>
+        </div>
 
-        <div id="DetailAddress" class="detail-address"><span id="DetailAddressValue" class="detail-address-value"><Span>Address: </Span>@Model.AddressDetails</span></div>
+        <div class="view-details-body" id="ViewDetailsBody">
 
+            <p id="PersonName" class="Person-Name">@Model.Name</p>
+            <div id='DetailEmail' class="detail-email"><Span>Email: </Span>@Model.Email</div>
+            <div id="DetailMobile" class="detail-mobile"><Span>Mobile: </Span>@Model.MobileNumber</div>
+            <div id="DetailLandline" class="detail-landline"><Span>Landline: </Span>@Model.LandLineNumber</div>
+            <div id="DetailSite" class="detail-site"><Span>Website: </Span>@Model.Website</div>
+
+            <div id="DetailAddress" class="detail-address"><span id="DetailAddressValue" class="detail-address-value"><Span>Address: </Span>@Model.AddressDetails</span></div>
+
+        </div>
     </div>
-</div>
+}    
+
 

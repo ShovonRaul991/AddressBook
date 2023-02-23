@@ -26,11 +26,8 @@ namespace AddressBook.Controllers
         
         public IActionResult Index()
         {
-            var AddressSelected = _context.Addresses.Find(1);
-            if(AddressSelected == null) 
-            {
-                return NotFound();
-            }
+            var AddressSelected = _context.Addresses.FirstOrDefault();
+            
             return View(AddressSelected);
         }
 

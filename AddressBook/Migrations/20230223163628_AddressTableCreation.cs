@@ -5,13 +5,13 @@
 namespace AddressBook.Migrations
 {
     /// <inheritdoc />
-    public partial class AddressBookMigration : Migration
+    public partial class AddressTableCreation : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "addresses",
+                name: "Addresses",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -25,7 +25,7 @@ namespace AddressBook.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_addresses", x => x.Id);
+                    table.PrimaryKey("PK_Addresses", x => x.Id);
                 });
         }
 
@@ -33,7 +33,7 @@ namespace AddressBook.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "addresses");
+                name: "Addresses");
         }
     }
 }

@@ -53,7 +53,7 @@ namespace AddressBook.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("addresses");
+                    b.ToTable("Addresses");
                 });
 #pragma warning restore 612, 618
         }

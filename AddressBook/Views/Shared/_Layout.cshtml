@@ -26,12 +26,13 @@
             <img src="~/images/blog-icon.png" alt="Blog" />
         </nav>
     </header>
-        <div class="page-form">
-            <div class="contact-list">
+        <div class="page-form" >
+        <div class="contact-list" style="margin:0px">
                 <div class="contact-list-header">
                     <h3>Contacts</h3>
                 </div>
-                <div class="contact-list-items" id="ContactListItems" style="">
+                <div class="contact-list-items" id="ContactListItems" style="margin:0px">
+                    
                     @foreach (var contact in @data.Addresses.ToList())
                     {
                         if(contact.Id==Model.Id)
@@ -39,9 +40,9 @@
                         <a asp-controller="Select" asp-action="Index" asp-route-id=@contact.Id style="color:black;text-decoration:none">
                             <div class="contact-list-item" style="background-color: #CEE7F2">
                             <p style="display:none">@contact.Id</p>
-                            <p class="name" style="margin-bottom: 0px; font-size: 30px">@contact.Name</p>
-                            <p class="email" style="font-size: 10px">@contact.Email</p>
-                            <p class="mobile" style="font-size: 10px">@contact.MobileNumber</p>
+                                <p class="name" style="margin-bottom: 0px; font-size: 23px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight:350">@contact.Name</p>
+                            <p class="email" style="font-size: 12px;font-weight:350px;margin-bottom:0px">@contact.Email</p>
+                            <p class="mobile" style="font-size: 12px;font-weight:350px;margin-bottom:0px">@contact.MobileNumber</p>
                         </div></a>
                         continue;
                     }

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AddressBook.Migrations
 {
     [DbContext(typeof(AddressBookDbContext))]
-    [Migration("20230222131022_AddressBookMigration")]
-    partial class AddressBookMigration
+    [Migration("20230223163628_AddressTableCreation")]
+    partial class AddressTableCreation
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,7 +56,7 @@ namespace AddressBook.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("addresses");
+                    b.ToTable("Addresses");
                 });
 #pragma warning restore 612, 618
         }

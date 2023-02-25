@@ -47,16 +47,35 @@ body{
     
 }
 
+.page-nav-items a:hover{
+    background-color:yellow
+}
+
+
 
 .page-nav-items a{
     display: inline-flex;
-    padding: 5px 25px 0px;
+    padding: 5px 25px 7px;
     font-weight: bolder;
     color:white;
     font-size: 16px;
     text-decoration: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
+    
+}
+
+.page-nav-items a:hover{
+    background-color: #FF9900;
+    
+    border-left: #fff 5px solid;
+    color: #333333;
+}
+
+.page-nav-items a:focus {
+    background-color: #FF9900;
+    border-left: #fff 5px solid;
+    color: #333333;
 }
 
 .page-navigation img{
@@ -73,16 +92,22 @@ body{
 .contact-list{
     width: 25%;
     background-color: white;
-    margin: 20px;
+    margin: 0px;
     padding: 20px;
 }
 .contact-list-header h3{
     text-transform: uppercase;
     margin: 0px 0px 15px;
 }
+
+.contact-list-items a {
+    color: black;
+    text-decoration: none;
+
+    
+}
 .contact-list-item{
     border: 1px solid black;
-    border-bottom: 0;
     padding: 5px;
     width: 100%;
     text-align: left;
@@ -94,45 +119,56 @@ body{
     background-color: #CEE7F2;
 }
 
-.contact-list-item:last-child{
-    border-bottom: 1px solid black;
-}
+
 
 .contact-name,.contact-email,.contact-mobile{
     margin:0px;
     font-weight: 100;
 }
-.contact-name{
+.contact-name {
     font-size: 35px;
+    margin-bottom: 0px;
+    font-size: 23px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
 }
-.contact-email,.contact-mobile{
-    font-size: 10px;
-    
+.contact-email, .contact-mobile {
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 0px
 }
 
 /* right part */
 .view-details{
     position: sticky;
-    width: 160%;
+    width: 140%;
     margin: 20px;
     padding: 50px;
+
 }
 .view-details-header{
     float: right;
     display: block;
 }
-.icon-edit{
+.icon-edit {
+    
+    color: black;
+    text-decoration: none;
     position: relative;
-      right: 80px;
-      
+    right: 20px
 }
+
+
 .icon-edit img{
     width: 15px;
     height: 15px
 }
-.icon-delete{
+.icon-delete {
+    
+    color: black;
+    text-decoration: none;
     position: relative;
-    bottom: 10px;
+    top: 1px
 }
 .icon-delete img{
     width: 20px;
@@ -174,6 +210,9 @@ body{
     padding: 40px;
     width: 160%;
     height: 80%;
+    position: relative;
+    top: 70px;
+    width: 140%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
@@ -240,7 +279,7 @@ body{
     margin-left: 5px;
 }
 
- #RequiredName,#RequiredEmail,#RequiredMobile,#RequiredLandline{
+#RequiredName, #RequiredEmail, #RequiredMobile, #RequiredLandline, #RequiredWebsite, #RequiredAddress {
     color: red;
     margin-right: 20px;
     padding: 0px;

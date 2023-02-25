@@ -3,43 +3,44 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @model Address
-
-<form class="form-input" id="Formid" method="post" asp-controller="Edit" asp-action="Update" asp-route-id=@Model.Id style="position:relative;top:70px;width:140%">
+<script src="~/lib/jquery/dist/jquery.js" type="text/javascript"></script>
+<script src="~/js/page.js" type="text/javascript"></script>
+<form class="form-input" id="Formid" method="post" asp-controller="Edit" asp-action="Update" asp-route-id=@Model.Id>
 
     <div>
-        <label for="NameEntry">Name <span id="RequiredName">*</span></label>
-        <input id="NameEntry" name="Name" type="text" value=@Model.Name.Trim()>
+        <label asp-for=Name for="NameEntry">Name <span asp-validation-for=Name id="RequiredName">*</span></label>
+        <input asp-for=Name id="NameEntry" name="Name" type="text" value=@Model.Name>
     </div>
     <div>
-        <label for="EmailEntry">Email <span id="RequiredEmail">*</span></label>
-        <input id="EmailEntry" name="Email" type="text" value=@Model.Email>
+        <label asp-for=Email for="EmailEntry">Email <span id="RequiredEmail">*</span></label>
+        <input asp-for=Email id="EmailEntry" name="Email" type="text" value=@Model.Email>
     </div>
     <div class="mobile-landline">
         <div class="mobile-landline-label">
             <div>
-                <label for="MobileEntry" class="label">
+                <label asp-for=MobileNumber for="MobileEntry" class="label">
                     Mobile
                     <span id="RequiredMobile">*</span>
                 </label>
-                <input id="MobileEntry" name="mobile" class="input" type="text" value=@Model.MobileNumber>
+                <input asp-for=MobileNumber id="MobileEntry" name="mobile" class="input" type="text" value=@Model.MobileNumber>
 
             </div>
             <div>
-                <label for="LandlineEntry" class="label">Landline<span id="RequiredLandline">*</span></label>
+                <label asp-for=LandLineNumber for="LandlineEntry" class="label">Landline<span id="RequiredLandline">*</span></label>
 
-                <input id="LandlineEntry" name="landline" class="input" type="text" value=@Model.LandLineNumber>
+                <input asp-for=LandLineNumber id="LandlineEntry" name="landline" class="input" type="text" value=@Model.LandLineNumber>
 
             </div>
 
         </div>
     </div>
     <div>
-        <label for="WebsiteEntry">Website</label>
-        <input id="WebsiteEntry" name="website" type="text" value=@Model.Website>
+        <label asp-for=Website for="WebsiteEntry">Website<span id="RequiredWebsite">*</span></label>
+        <input asp-for=Website id="WebsiteEntry" name="website" type="text" value=@Model.Website>
     </div>
     <div>
-        <label for="AddressEntry">Address</label>
-        <input type="text" name="address" id="AddressEntry" value=@Model.AddressDetails/>
+        <label asp-for=AddressDetails for="AddressEntry">Address<span id="RequiredAddress">*</span></label>
+        <input asp-for=AddressDetails type="text" name="address" id="AddressEntry" value=@Model.AddressDetails />
     </div>
 
 

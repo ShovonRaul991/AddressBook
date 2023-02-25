@@ -13,7 +13,6 @@
     <None Include="wwwroot\images\delete2.png" />
     <None Include="wwwroot\images\Edit-icon.png" />
     <None Include="wwwroot\images\edit1.jpg" />
-    <None Include="wwwroot\js\page.js" />
   </ItemGroup>
 
   <ItemGroup>

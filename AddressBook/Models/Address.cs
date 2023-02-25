@@ -8,7 +8,7 @@ namespace AddressBook.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Name is required.")]
         public string Email { get; set; }
         [Required]
         public long MobileNumber { get; set; }

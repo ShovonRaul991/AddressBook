@@ -1,18 +1,21 @@
 ﻿@using AddressBook.Data
 @model Address
+
 @inject AddressBookDbContext _context;
 @{
     ViewData["Title"] = "Home Page";
     var data = ViewBag.Context as AddressBookDbContext;
 }
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    
     <title>Address Book</title>
-    <link href="~/css/style.css" rel="stylesheet" />
-    <script src="~/js/page.js"></script>
+    <link href="~/css/style.css" rel="stylesheet" asp-append-version="true"/>
+    
 </head>
 
 <body>
@@ -20,38 +23,47 @@
         <h1 class="page-title">Address Book</h1>
         <nav class="page-navigation">
             <ul class="page-nav-items">
-                <li><a  asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                <li><a  asp-area="" asp-controller="Add" asp-action="Index">Add</a></li>
+                <li>
+                    <a asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li><a asp-controller="Add" asp-action="Index">Add</a></li>
             </ul>
             <img src="~/images/blog-icon.png" alt="Blog" />
         </nav>
     </header>
         <div class="page-form" >
-        <div class="contact-list" style="margin:0px">
+        <div class="contact-list">
                 <div class="contact-list-header">
                     <h3>Contacts</h3>
                 </div>
-                <div class="contact-list-items" id="ContactListItems" style="margin:0px">
+                <div class="contact-list-items" id="ContactListItems">
                     
                     @foreach (var contact in @data.Addresses.ToList())
                     {
-                        if(contact.Id==Model.Id)
-                    {
-                        <a asp-controller="Select" asp-action="Index" asp-route-id=@contact.Id style="color:black;text-decoration:none">
-                            <div class="contact-list-item" style="background-color: #CEE7F2">
-                            <p style="display:none">@contact.Id</p>
-                                <p class="name" style="margin-bottom: 0px; font-size: 23px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight:350">@contact.Name</p>
-                            <p class="email" style="font-size: 12px;font-weight:350px;margin-bottom:0px">@contact.Email</p>
-                            <p class="mobile" style="font-size: 12px;font-weight:350px;margin-bottom:0px">@contact.MobileNumber</p>
-                        </div></a>
-                        continue;
-                    }
-                    <a asp-controller="Select" asp-action="Index" asp-route-id=@contact.Id style="color:black; text-decoration:none">
+                    
+                    
+                        if (contact.Id == Model.Id)
+                        {
+                            <a asp-controller="Select" asp-action="Index" asp-route-id=@contact.Id>
+                                <div class="contact-list-item" style="background-color: #CEE7F2">
+                                <p style="display:none">@contact.Id</p>
+                                <p class="contact-name" >@contact.Name</p>
+                                <p class="contact-email">@contact.Email</p>
+                                <p class="contact-mobile">@contact.MobileNumber</p>
+                                </div>
+                            </a>
+                            continue;
+                        }
+                    
+
+                        
+                    
+                    <a asp-controller="Select" asp-action="Index" asp-route-id=@contact.Id>
                         <div class="contact-list-item">
                             <p style="display:none">@contact.Id</p>
-                            <p class="name" style="margin-bottom: 0px; font-size: 30px">@contact.Name</p>
-                            <p class="email" style="font-size: 10px">@contact.Email</p>
-                            <p class="mobile" style="font-size: 10px">@contact.MobileNumber</p>
+                            <p class="contact-name" >@contact.Name</p>
+                            <p class="contact-email" >@contact.Email</p>
+                            <p class="contact-mobile" >@contact.MobileNumber</p>
                         </div>
                     </a>
                     }
@@ -59,9 +71,9 @@
                 </div>
             </div>
             <div>
-                @RenderBody();
+                @RenderBody()
             </div>
-        <</div>
+        </div>
     
 </body>
 </html>

@@ -48,21 +48,20 @@
     };
 
     $.fn.emailValidation = function () {
-        /*
-        let validEmail = /^[0-9a-z.\s+_]+@@[0-9a-z-.+]+\.[a-z]{2,4}$/;
         
-        if(validEmail.test(emailAddress.val())
-        {
-            $("#RequiredEmail").text("*");
-        }
-        */
+        let validEmail = /^[0-9a-z.\s+_]+@[0-9a-z-.+]+\.[a-z]{2,4}$/;
+        
         if (!emailAddress.val()) {
             $("#RequiredEmail").text("Email is required.");
 
         }
 
+        else if (validEmail.test(emailAddress.val())) {
+            $("#RequiredEmail").text("*");
+        }
+
         else {
-            $("#RequiredEmail").text("*")
+            $("#RequiredEmail").text("invalid email")
             validEmail = true;
         }
     };

@@ -33,10 +33,12 @@ namespace AddressBook.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Update(string Name, string Email, long mobile, long landline, string website, string address, int id)
         {
+            /*
             if (id == null || id == 0)
             {
                 return NotFound();
             }
+            */
             Regex regexforEmail = new Regex(@"^[0-9a-z.\s+_]+@[0-9a-z-.+]+\.[a-z]{2,4}$", RegexOptions.CultureInvariant | RegexOptions.Singleline);
             
             var AddressSelected = _context.Addresses.Find(id);
